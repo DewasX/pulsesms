@@ -3,8 +3,10 @@ package com.example.data.repository
 import com.example.data.local.ConversationEntity
 import com.example.data.local.MessageDao
 import com.example.data.local.MessageEntity
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.withContext
 
 class MessageRepository(private val messageDao: MessageDao) {
 
@@ -88,11 +90,11 @@ class MessageRepository(private val messageDao: MessageDao) {
         return ClassifiedProperties(category = "PERSONAL", isOtp = false, otpCode = null)
     }
 
-    suspend fun populateMockData() {
+    suspend fun populateMockData() = withContext(Dispatchers.IO) {
         val existing = activeConversations.first()
         val archived = archivedConversations.first()
         val spam = spamConversations.first()
-        if (existing.isNotEmpty() || archived.isNotEmpty() || spam.isNotEmpty()) return // Already populated
+        if (existing.isNotEmpty() || archived.isNotEmpty() || spam.isNotEmpty()) return@withContext // Already populated
 
         // Create initial conversations
         // ID 1: local AI assistant

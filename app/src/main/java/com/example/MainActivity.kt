@@ -85,6 +85,9 @@ class MainActivity : ComponentActivity() {
                                 onNavigateToLinkedDevices = {
                                     navController.navigate("linked_devices")
                                 },
+                                onNavigateToPromo = {
+                                    navController.navigate("play_store_promo")
+                                },
                                 onNavigateToSearch = {
                                     navController.navigate("search")
                                 }
@@ -125,6 +128,15 @@ class MainActivity : ComponentActivity() {
                         composable("settings") {
                             SettingsScreen(
                                 viewModel = viewModel,
+                                onNavigateBack = {
+                                    navController.popBackStack()
+                                }
+                            )
+                        }
+
+                        // 6b. Play Store Promotional Showcase Page
+                        composable("play_store_promo") {
+                            PlayStorePromoScreen(
                                 onNavigateBack = {
                                     navController.popBackStack()
                                 }

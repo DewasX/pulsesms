@@ -47,6 +47,7 @@ fun InboxScreen(
     onNavigateToSpam: () -> Unit,
     onNavigateToScheduled: () -> Unit,
     onNavigateToLinkedDevices: () -> Unit,
+    onNavigateToPromo: () -> Unit,
     onNavigateToSearch: () -> Unit
 ) {
     val conversations by viewModel.activeConversations.collectAsState()
@@ -236,6 +237,10 @@ fun InboxScreen(
                 onNavigateToLinkedDevices = {
                     showProfileDialog = false
                     onNavigateToLinkedDevices()
+                },
+                onNavigateToPromo = {
+                    showProfileDialog = false
+                    onNavigateToPromo()
                 }
             )
         }
@@ -486,7 +491,8 @@ fun ProfileMenuDialog(
     onNavigateToArchived: () -> Unit,
     onNavigateToSpam: () -> Unit,
     onNavigateToScheduled: () -> Unit,
-    onNavigateToLinkedDevices: () -> Unit
+    onNavigateToLinkedDevices: () -> Unit,
+    onNavigateToPromo: () -> Unit
 ) {
     Dialog(onDismissRequest = { onDismiss() }) {
         Surface(
@@ -550,6 +556,12 @@ fun ProfileMenuDialog(
                     icon = Icons.Outlined.QrCodeScanner,
                     label = "Device pairing (Companion)",
                     onClickValue = onNavigateToLinkedDevices
+                )
+
+                ProfileMenuItem(
+                    icon = Icons.Outlined.Collections,
+                    label = "Play Store Promo covers",
+                    onClickValue = onNavigateToPromo
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
