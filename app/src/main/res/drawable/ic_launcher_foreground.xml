@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Subtle drop-shadow for the speech bubble to add visual depth -->
+    <path
+        android:fillColor="#22000000"
+        android:pathData="M 55 28 C 39.5 28 27 38.3 27 51 C 27 57.4 31.5 63.1 38.5 67 C 37 70.5 34.5 75.5 32 79 C 37 78.5 44.5 75.5 48.5 72.5 C 50.6 73 52.8 73.3 55 73.3 C 70.5 73.3 83 63 83 50.3 C 83 37.6 70.5 27.3 55 27.3 L 55 28 Z" />
+
+    <!-- Pure white premium speech bubble background -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 54 26 C 38.5 26 26 36.3 26 49 C 26 55.4 30.5 61.1 37.5 65 C 36 68.5 33.5 73.5 31 77 C 36 76.5 43.5 73.5 47.5 70.5 C 49.6 71 51.8 71.3 54 71.3 C 69.5 71.3 82 61 82 48.3 C 82 35.6 69.5 25.3 54 25.3 L 54 26 Z" />
+
+    <!-- ECG horizontal pulse wave running gracefully inside the bubble -->
+    <path
+        android:strokeColor="#0B57D0"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 36 49 H 46 L 50 37 L 55 61 L 60 43 L 64 49 H 72" />
+        
+    <!-- Glowing small dot indicator at end of pulse -->
+    <path
+        android:fillColor="#0B57D0"
+        android:pathData="M 72 46.5 A 2.5 2.5 0 1 1 72 51.5 A 2.5 2.5 0 1 1 72 46.5 Z" />
+</vector>

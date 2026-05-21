@@ -1,0 +1,6 @@
+{
+  "name": "Pulse SMS",
+  "description": "An offline-first Google Messages clone with a clean Material You UI, smart filters, automated OTP categorization, local scheduling, AI smart replies, search, and intuitive interactions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
